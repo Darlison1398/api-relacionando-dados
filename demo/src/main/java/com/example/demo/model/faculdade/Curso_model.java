@@ -26,7 +26,7 @@ public class Curso_model {
     private int cargahoraria;
 
     @ManyToOne
-    @JoinColumn(name = "materia_id") 
+    @JoinColumn
     private Materia_model materia;
 
     public Curso_model (){}

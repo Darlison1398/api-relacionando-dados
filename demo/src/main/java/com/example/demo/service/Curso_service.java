@@ -46,7 +46,6 @@ public class Curso_service implements Curso_interface {
     public Curso_model saveCurso(Curso_model curso) {
         try {
             Materia_model materia = curso.getMateria();
-            //materia.getId();
             curso.setMateria(materia);
             return curso_repository.save(curso);
         } catch (Exception e) {
