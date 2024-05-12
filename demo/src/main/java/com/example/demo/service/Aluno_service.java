@@ -42,7 +42,21 @@ public class Aluno_service implements Aluno_interface {
     @Override
     public Aluno_model saveAluno(Aluno_model aluno) {
         try {
-            return aluno_repository.save(aluno);
+            if (aluno.getNome() == null || aluno.getNome().equals("")) {
+                throw new General_exeptions("Nome não pode ser nulo");
+
+            } else if (aluno.getNumeromatricula() == 0){
+                throw new General_exeptions("Numero de matricula não pode ser nulo");
+            
+            } else if (aluno.getCpf().equals("") || aluno.getCpf().length() != 11){
+                throw new General_exeptions("CPF é obrigatório.");
+
+            } else if (aluno.getRg().equals("")) {
+                throw new General_exeptions("RG é obrigatório.");
+
+            } else {
+                return aluno_repository.save(aluno);
+            }
         } catch (Exception e) {
             throw new General_exeptions("Erro ao tentar cadastrar aluno", e);
         }
