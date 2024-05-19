@@ -19,6 +19,9 @@ public class Imagen_model {
     @Column
     private String path;
 
+    @Column
+    private String url;
+
     public Imagen_model(){}
 
     public Long getId() {
@@ -45,6 +48,15 @@ public class Imagen_model {
         this.path = path;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    
     
     
 }

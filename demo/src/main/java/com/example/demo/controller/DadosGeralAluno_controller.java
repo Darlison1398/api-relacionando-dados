@@ -21,7 +21,7 @@ public class DadosGeralAluno_controller {
         this.dadosGeralAluno_service = dadosGeralAluno_service;
     }
 
-        @GetMapping("/alunos")
+    @GetMapping("/alunos")
     public List<String> obterNomeCpfAluno(@RequestParam String nome, @RequestParam String cpf) {
         return dadosGeralAluno_service.obterNomeCpfAluno(nome, cpf);
     }
